@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { createClient, Session } from "@supabase/supabase-js";
 import { Auth } from "@supabase/auth-ui-react";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
+import Dashboard from "./screens/Dashboard";
 
 function App() {
   const supabaseUrl = "https://zyfeuwmhjyybilebrnnl.supabase.co";
@@ -40,7 +41,7 @@ function App() {
       </div>
     );
   } else {
-    return <div>Logged in!</div>;
+    return <Dashboard />;
   }
 }
 
