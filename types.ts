@@ -20,4 +20,4 @@ type Transaction = {
   published_date: string;
 };
 
-export { Category, Source, Transaction };
+export type { Category, Source, Transaction };
