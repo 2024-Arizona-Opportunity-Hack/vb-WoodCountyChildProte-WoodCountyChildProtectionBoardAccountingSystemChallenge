@@ -5,6 +5,7 @@ import { Auth } from "@supabase/auth-ui-react";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
 import { SessionContext } from "./context";
 import Dashboard from "./screens/Dashboard";
+import FundAccounting from "./components/FundAccounting";
 import supabase from "../supabase"
 
 function App() {
@@ -42,6 +43,7 @@ function App() {
     return (
       <SessionContext.Provider value={{ session }}>
         <Dashboard />
+        <FundAccounting />
       </SessionContext.Provider>
     );
   }
