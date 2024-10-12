@@ -1,68 +1,50 @@
+# React + TypeScript + Vite
 
-# 2024_fall Hackathon Project
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Quick Links
-- [Hackathon Details](https://www.ohack.dev/hack/2024_fall)
-- [Team Slack Channel](https://opportunity-hack.slack.com/app_redirect?channel=vb-wood-county)
-- [Nonprofit Partner](https://ohack.dev/nonprofit/zE1C00uBEd7lzgzvyLXJ)
-- [Problem Statement](https://ohack.dev/project/96CirjFsmZlwa5UXa7ne)
+Currently, two official plugins are available:
 
-## Creator
-@vince (on Slack)
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Team "vb"
-- [Team Member 1](GitHub profile link)
-- [Team Member 2](GitHub profile link)
-- [Team Member 3](GitHub profile link)
-<!-- Add all team members -->
+## Expanding the ESLint configuration
 
-## Project Overview
-Brief description of your project and its goals.
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-## Tech Stack
-- Frontend: 
-- Backend: 
-- Database: 
-- APIs: 
-<!-- Add/modify as needed -->
+- Configure the top-level `parserOptions` property like this:
 
-
-## Getting Started
-Instructions on how to set up and run your project locally.
-
-```bash
-# Example commands
-git clone [your-repo-link]
-cd [your-repo-name]
-npm install
-npm start
+```js
+export default tseslint.config({
+  languageOptions: {
+    // other options...
+    parserOptions: {
+      project: ['./tsconfig.node.json', './tsconfig.app.json'],
+      tsconfigRootDir: import.meta.dirname,
+    },
+  },
+})
 ```
 
+- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
+- Optionally add `...tseslint.configs.stylisticTypeChecked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
 
-## Your next steps
-1. ✅ Add everyone on your team to your GitHub repo like [this video posted in our Slack channel](https://opportunity-hack.slack.com/archives/C1Q6YHXQU/p1605657678139600)
-2. ✅ Create your DevPost project [like this video](https://youtu.be/vCa7QFFthfU?si=bzMQ91d8j3ZkOD03)
-3. ✅ Use the [2024 DevPost](https://opportunity-hack-2024-arizona.devpost.com) to submit your project
-4. ✅ Your DevPost final submission demo video should be 4 minutes or less
-5. ✅ Review the judging criteria on DevPost
+```js
+// eslint.config.js
+import react from 'eslint-plugin-react'
 
-# What should your final Readme look like?
-Your readme should be a one-stop-shop for the judges to understand your project. It should include:
-- Team name
-- Team members
-- Slack channel
-- Problem statement
-- Tech stack
-- Link to your DevPost project
-- Link to your final demo video
-- Any other information you think is important
-
-You'll use this repo as your resume in the future, so make it shine! 🌟
-
-Examples of stellar readmes:
-- ✨ [2019 Team 3](https://github.com/2019-Arizona-Opportunity-Hack/Team-3)
-- ✨ [2019 Team 6](https://github.com/2019-Arizona-Opportunity-Hack/Team-6)
-- ✨ [2020 Team 2](https://github.com/2020-opportunity-hack/Team-02)
-- ✨ [2020 Team 4](https://github.com/2020-opportunity-hack/Team-04)
-- ✨ [2020 Team 8](https://github.com/2020-opportunity-hack/Team-08)
-- ✨ [2020 Team 12](https://github.com/2020-opportunity-hack/Team-12)
+export default tseslint.config({
+  // Set the react version
+  settings: { react: { version: '18.3' } },
+  plugins: {
+    // Add the react plugin
+    react,
+  },
+  rules: {
+    // other rules...
+    // Enable its recommended rules
+    ...react.configs.recommended.rules,
+    ...react.configs['jsx-runtime'].rules,
+  },
+})
+```
