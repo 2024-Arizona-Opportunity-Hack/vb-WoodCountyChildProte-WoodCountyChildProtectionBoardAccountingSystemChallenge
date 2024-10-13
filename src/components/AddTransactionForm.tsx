@@ -92,93 +92,97 @@ function AddTransactionForm() {
           <span>{success}</span>
         </div>
       )}
-      <div className="flex flex-row space-x-2 items-end">
-        <label className="form-control w-full max-w-xs">
-          <div className="label">
-            <span className="label-text">Amount</span>
-          </div>
-          <input
-            type="number"
-            placeholder="+/-1000.00"
-            className="input input-bordered w-full max-w-xs"
-            value={values.amount}
-            onChange={handleInputChange}
-            name="amount"
-          />
-        </label>
-        <label className="form-control w-full max-w-xs">
-          <div className="label">
-            <span className="label-text">Source</span>
-          </div>
-          <select
-            className="select select-bordered"
-            value={values.source_id}
-            onChange={handleInputChange}
-            name="source_id"
-          >
-            <option disabled selected value="">
-              Pick one
-            </option>
-            {source?.map((source) => {
-              return (
-                <option value={source.id} key={source.id}>
-                  {`${source.type}:${source.name}`}
-                </option>
-              );
-            })}
-          </select>
-        </label>
-        <label className="form-control w-full max-w-xs">
-          <div className="label">
-            <span className="label-text">Category</span>
-          </div>
-          <select
-            className="select select-bordered"
-            value={values.category_id}
-            onChange={handleInputChange}
-            name="category_id"
-          >
-            <option disabled selected value="">
-              Pick one
-            </option>
-            {categories?.map((category) => {
-              return (
-                <option value={category.id} key={category.id}>
-                  {category.type}
-                </option>
-              );
-            })}
-          </select>
-        </label>
-        <label className="form-control w-full max-w-xs">
-          <div className="label">
-            <span className="label-text">Date</span>
-          </div>
-          <input
-            type="text"
-            placeholder="MM-DD-YYYY"
-            className="input input-bordered w-full max-w-xs"
-            value={values.date}
-            onChange={handleInputChange}
-            name="date"
-          />
-        </label>
-        <label className="form-control w-full max-w-xs">
-          <div className="label">
-            <span className="label-text">Description</span>
-          </div>
-          <input
-            type="text"
-            placeholder="A little bit more"
-            className="input input-bordered w-full max-w-xs"
-            value={values.description}
-            onChange={handleInputChange}
-            name="description"
-          />
-        </label>
-        <button className="btn" onClick={() => handleSubmit()}>
-          Add+
-        </button>
+      <div>
+        <div className="flex flex-row space-x-2 items-end">
+          <label className="form-control w-full max-w-xs">
+            <div className="label">
+              <span className="label-text">Amount</span>
+            </div>
+            <input
+              type="number"
+              placeholder="+/-1000.00"
+              className="input input-bordered w-full max-w-xs"
+              value={values.amount}
+              onChange={handleInputChange}
+              name="amount"
+            />
+          </label>
+          <label className="form-control w-full max-w-xs">
+            <div className="label">
+              <span className="label-text">Source</span>
+            </div>
+            <select
+              className="select select-bordered"
+              value={values.source_id}
+              onChange={handleInputChange}
+              name="source_id"
+            >
+              <option disabled selected value="">
+                Pick one
+              </option>
+              {source?.map((source) => {
+                return (
+                  <option value={source.id} key={source.id}>
+                    {`${source.type}:${source.name}`}
+                  </option>
+                );
+              })}
+            </select>
+          </label>
+          <label className="form-control w-full max-w-xs">
+            <div className="label">
+              <span className="label-text">Category</span>
+            </div>
+            <select
+              className="select select-bordered"
+              value={values.category_id}
+              onChange={handleInputChange}
+              name="category_id"
+            >
+              <option disabled selected value="">
+                Pick one
+              </option>
+              {categories?.map((category) => {
+                return (
+                  <option value={category.id} key={category.id}>
+                    {category.type}
+                  </option>
+                );
+              })}
+            </select>
+          </label>
+        </div>
+        <div className="flex flex-row space-x-2 items-end">
+          <label className="form-control w-full max-w-xs">
+            <div className="label">
+              <span className="label-text">Date</span>
+            </div>
+            <input
+              type="text"
+              placeholder="MM-DD-YYYY"
+              className="input input-bordered w-full max-w-xs"
+              value={values.date}
+              onChange={handleInputChange}
+              name="date"
+            />
+          </label>
+          <label className="form-control w-full max-w-xs">
+            <div className="label">
+              <span className="label-text">Description</span>
+            </div>
+            <input
+              type="text"
+              placeholder="A little bit more"
+              className="input input-bordered w-full max-w-xs"
+              value={values.description}
+              onChange={handleInputChange}
+              name="description"
+            />
+          </label>
+          <button className="btn" onClick={() => handleSubmit()}>
+            Add+
+          </button>
+        </div>
       </div>
     </>
   );
