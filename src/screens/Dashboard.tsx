@@ -5,12 +5,14 @@ import Navbar from "../components/Navbar";
 import TransactionTable from "../components/TransactionTable";
 import SourceTable from "../components/SourceTable";
 import CategoryTable from "../components/CategoryTable";
-import BalanceSheet from "../components/BalanceSheet";
 import DonorReceipt from "../components/DonorReceipt";
 import AddBudgetForm from "../components/AddBudgetForm";
 import IRSFiling from "../components/IRSFiling";
 import IncomeStatement from "../components/IncomeStatement";
 import BudgetChartList from "../components/BudgetChartList";
+import AddRestrictionForm from "../components/AddRestrictionForm";
+import RestrictionTable from "../components/RestrictionTable";
+import BalanceSheet from "../components/BalanceSheet";
 
 function Dashboard() {
     return (
@@ -63,6 +65,16 @@ function Dashboard() {
                     <div role="tabpanel" className="tab-content p-10">
                         <AddBudgetForm />
                     </div>
+                    <input
+                        type="radio"
+                        name="forms"
+                        role="tab"
+                        className="tab"
+                        aria-label="Add restriction"
+                    />
+                    <div role="tabpanel" className="tab-content p-10">
+                        <AddRestrictionForm />
+                    </div>
                 </div>
             </div>
 
@@ -70,8 +82,17 @@ function Dashboard() {
             <div className="p-5 rounded-xl border-2 mt-20">
                 <h2 className="font-bold text-xl p-3">Fund Accounting Table</h2>
                 <div role="tablist" className="tabs tabs-bordered">
-                    <input type="radio" name="tables" role="tab" className="tab" aria-label="Transactions" defaultChecked />
-                    <div role="tabpanel" className="tab-content p-10"><TransactionTable /></div>
+                    <input
+                        type="radio"
+                        name="tables"
+                        role="tab"
+                        className="tab"
+                        aria-label="Transactions"
+                        defaultChecked
+                    />
+                    <div role="tabpanel" className="tab-content p-10">
+                        <TransactionTable />
+                    </div>
 
                     <input
                         type="radio"
@@ -80,19 +101,58 @@ function Dashboard() {
                         className="tab"
                         aria-label="Sources"
                     />
-                    <div role="tabpanel" className="tab-content p-10"><SourceTable /></div>
+                    <div role="tabpanel" className="tab-content p-10">
+                        <SourceTable />
+                    </div>
 
-                    <input type="radio" name="tables" role="tab" className="tab" aria-label="Categories" />
-                    <div role="tabpanel" className="tab-content p-10"><CategoryTable /></div>
+                    <input
+                        type="radio"
+                        name="tables"
+                        role="tab"
+                        className="tab"
+                        aria-label="Categories"
+                    />
+                    <div role="tabpanel" className="tab-content p-10">
+                        <CategoryTable />
+                    </div>
+
+                    <input
+                        type="radio"
+                        name="tables"
+                        role="tab"
+                        className="tab"
+                        aria-label="Restrictions"
+                    />
+                    <div role="tabpanel" className="tab-content p-10">
+                        <RestrictionTable />
+                    </div>
                 </div>
             </div>
+
+            <input
+                type="radio"
+                name="reports"
+                role="tab"
+                className="tab"
+                aria-label="Income Statement"
+            />
+            <div role="tabpanel" className="tab-content p-10"><IncomeStatement /></div>
 
             {/* 3rd set of tabs - donor management */}
             <div className="p-5 rounded-xl border-2 mt-20">
                 <h2 className="font-bold text-xl p-3">Reports</h2>
                 <div role="tablist" className="tabs tabs-bordered">
-                    <input type="radio" name="reports" role="tab" className="tab" aria-label="Balance Sheet" defaultChecked />
-                    <div role="tabpanel" className="tab-content p-10"><BalanceSheet /></div>
+                    <input
+                        type="radio"
+                        name="reports"
+                        role="tab"
+                        className="tab"
+                        aria-label="Balance Sheet"
+                        defaultChecked
+                    />
+                    <div role="tabpanel" className="tab-content p-10">
+                        <BalanceSheet />
+                    </div>
 
                     <input
                         type="radio"
@@ -101,11 +161,20 @@ function Dashboard() {
                         className="tab"
                         aria-label="Income Statement"
                     />
-                    <div role="tabpanel" className="tab-content p-10"><IncomeStatement /></div>
+                    <div role="tabpanel" className="tab-content p-10">
+                        <IncomeStatement />
+                    </div>
 
-
-                    <input type="radio" name="reports" role="tab" className="tab" aria-label="Donation Details" />
-                    <div role="tabpanel" className="tab-content p-10"><DonorReceipt /></div>
+                    <input
+                        type="radio"
+                        name="reports"
+                        role="tab"
+                        className="tab"
+                        aria-label="Donation Details"
+                    />
+                    <div role="tabpanel" className="tab-content p-10">
+                        <DonorReceipt />
+                    </div>
                 </div>
             </div>
 

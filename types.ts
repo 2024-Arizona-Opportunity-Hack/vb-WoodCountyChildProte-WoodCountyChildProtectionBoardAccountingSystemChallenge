@@ -20,4 +20,11 @@ type Transaction = {
   published_date: string;
 };
 
-export type { Category, Source, Transaction };
+type Restriction = {
+  id: number;
+  category_id: number;
+  source_id: number;
+  name: string;
+}
+
+export type { Category, Source, Transaction, Restriction };
