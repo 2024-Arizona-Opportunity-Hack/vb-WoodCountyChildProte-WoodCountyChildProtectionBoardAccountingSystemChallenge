@@ -4,7 +4,7 @@ import supabase from "../../supabase";
 
 function Navbar() {
   const superbaseCtx = useContext(SessionContext);
-  const session = superbaseCtx;
+  const sessionCtx = superbaseCtx;
 
   return (
     <div className="navbar rounded-full bg-base-300 mt-2">
@@ -13,7 +13,8 @@ function Navbar() {
           Wood County Child Protection Board
         </a>
       </div>
-      <div className="navbar-end">
+      <div className="navbar-end space-x-5">
+        <p>Hi, {sessionCtx?.session.user.email}!</p>
         <button
           className="btn bg-base-100"
           onClick={async () => {
