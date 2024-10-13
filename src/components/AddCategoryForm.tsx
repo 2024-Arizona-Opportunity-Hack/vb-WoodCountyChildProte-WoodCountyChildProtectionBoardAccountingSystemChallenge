@@ -35,6 +35,7 @@ function AddCategoryForm() {
     }
     setSuccess("Category added!");
     setValues(initialValues);
+    window.location.reload();
   }
 
   return (

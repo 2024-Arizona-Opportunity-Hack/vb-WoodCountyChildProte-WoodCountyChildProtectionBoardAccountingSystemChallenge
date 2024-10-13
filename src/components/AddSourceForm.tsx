@@ -35,6 +35,7 @@ function AddSourceForm() {
     }
     setSuccess("Source added!");
     setValues(initialValues);
+    window.location.reload();
   }
 
   return (

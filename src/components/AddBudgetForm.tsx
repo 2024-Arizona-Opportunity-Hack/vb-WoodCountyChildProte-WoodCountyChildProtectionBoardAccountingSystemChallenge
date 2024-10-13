@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import supabase from "../../supabase";
-import { Category, Source } from "../../types";
+import { Category } from "../../types";
 
 const initialValues = {
   amount: "",

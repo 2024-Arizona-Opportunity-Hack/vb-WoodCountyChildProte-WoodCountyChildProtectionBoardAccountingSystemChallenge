@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import supabase from "../../supabase";
 import { Category, Source } from "../../types";
+import { SessionContext } from "../context";
 
 const initialValues = {
   amount: "",
@@ -16,6 +17,8 @@ function AddTransactionForm() {
   const [values, setValues] = useState(initialValues);
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
+
+  const sessionCtx = useContext(SessionContext);
 
   useEffect(() => {
     async function fetchData() {
@@ -41,12 +44,14 @@ function AddTransactionForm() {
     setSuccess("");
     const { error } = await supabase.from("transaction").insert(values);
     if (error) {
-      console.log(error)
+      console.log(error);
       setError(error.message);
       return;
     }
     setSuccess("Transaction added!");
     setValues(initialValues);
+    sessionCtx?.setRefresh(!sessionCtx.refresh);
+    window.location.reload();
   }
 
   return (

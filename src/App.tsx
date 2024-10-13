@@ -5,11 +5,11 @@ import { Auth } from "@supabase/auth-ui-react";
 import { ThemeSupa } from "@supabase/auth-ui-shared";
 import { SessionContext } from "./context";
 import Dashboard from "./screens/Dashboard";
-import supabase from "../supabase"
+import supabase from "../supabase";
 
 function App() {
-
   const [session, setSession] = useState<Session | null>(null);
+  const [refresh, setRefresh] = useState(false);
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data: { session } }) => {
@@ -40,8 +40,8 @@ function App() {
     );
   } else {
     return (
-      <SessionContext.Provider value={{ session }}>
-          <Dashboard />
+      <SessionContext.Provider value={{ session, setRefresh, refresh }}>
+        <Dashboard />
       </SessionContext.Provider>
     );
   }

@@ -14,7 +14,7 @@ function Navbar() {
         </a>
       </div>
       <div className="navbar-end space-x-5">
-        <p>Hi, {sessionCtx?.session.user.email}!</p>
+        <p>Hi, {sessionCtx?.session?.user.email}!</p>
         <button
           className="btn bg-base-100"
           onClick={async () => {
