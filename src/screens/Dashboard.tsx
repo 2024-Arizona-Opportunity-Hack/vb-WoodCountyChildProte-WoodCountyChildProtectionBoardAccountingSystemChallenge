@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar";
 import FundAccounting from "../components/FundAccounting";
 import BalanceSheet from "../components/BalanceSheet";
 import DonorReceipt from "../components/DonorReceipt";
+import AddBudgetForm from "../components/AddBudgetForm";
 
 function Dashboard() {
     return (
@@ -42,10 +43,20 @@ function Dashboard() {
                         name="forms"
                         role="tab"
                         className="tab"
-                        aria-label="Add Funding Sources"
+                        aria-label="Add Sources"
                     />
                     <div role="tabpanel" className="tab-content p-10">
                         <AddSourceForm />
+                    </div>
+                    <input
+                        type="radio"
+                        name="forms"
+                        role="tab"
+                        className="tab"
+                        aria-label="Add budget"
+                    />
+                    <div role="tabpanel" className="tab-content p-10">
+                        <AddBudgetForm />
                     </div>
                 </div>
             </div>

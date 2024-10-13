@@ -24,3 +24,11 @@ CREATE TABLE transaction (
   CONSTRAINT fk_source FOREIGN KEY(source_id) REFERENCES source(id),
   CONSTRAINT fk_category FOREIGN KEY(category_id) REFERENCES category(id)
 );
+
+CREATE TABLE budget (
+  id SERIAL PRIMARY KEY,
+  category_id int NOT NULL,
+  name TEXT UNIQUE NOT NULL,
+  amount DECIMAL(10,2) NOT NULL,
+  CONSTRAINT fk_category FOREIGN KEY(category_id) REFERENCES category(id)
+);
