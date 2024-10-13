@@ -32,3 +32,12 @@ CREATE TABLE budget (
   amount DECIMAL(10,2) NOT NULL,
   CONSTRAINT fk_category FOREIGN KEY(category_id) REFERENCES category(id)
 );
+
+CREATE TABLE restriction (
+  id SERIAL PRIMARY KEY,
+  category_id int NOT NULL,
+  source_id INT NOT NULL,
+  name TEXT UNIQUE NOT NULL,
+  CONSTRAINT fk_category FOREIGN KEY(category_id) REFERENCES category(id),
+  CONSTRAINT fk_source FOREIGN KEY(source_id) REFERENCES source(id)
+);
