@@ -102,10 +102,10 @@ function Dashboard() {
                         className="tab"
                         aria-label="Income Statement"
                     />
-                    <div role="tabpanel" className="tab-content p-10"></div>
-                    {/* <IncomeStatement /> */}
+                    <div role="tabpanel" className="tab-content p-10"><IncomeStatement /></div>
+                    
 
-                    <input type="radio" name="reports" role="tab" className="tab" aria-label="Donor Receipt" />
+                    <input type="radio" name="reports" role="tab" className="tab" aria-label="Donation Details" />
                     <div role="tabpanel" className="tab-content p-10"><DonorReceipt /></div>
                 </div>
             </div>
