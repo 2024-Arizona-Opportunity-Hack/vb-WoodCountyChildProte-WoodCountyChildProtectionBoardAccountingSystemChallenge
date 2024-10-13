@@ -43,9 +43,9 @@ function App() {
   } else {
     return (
       <SessionContext.Provider value={{ session }}>
-        <Dashboard />
-        {/* <FundAccounting /> */}
-        <BalanceSheet />
+          <Dashboard />
+          {/* <FundAccounting /> */}
+          <BalanceSheet />
       </SessionContext.Provider>
     );
   }
