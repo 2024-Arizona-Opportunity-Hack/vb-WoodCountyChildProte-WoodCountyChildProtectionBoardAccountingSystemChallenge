@@ -78,19 +78,19 @@ function Dashboard() {
             <div className="p-5 rounded-xl border-2 mt-20">
                 <h2 className="font-bold text-xl p-3">Fund Accounting Table</h2>
                 <div role="tablist" className="tabs tabs-bordered">
-                    <input type="radio" name="my_tabs_1" role="tab" className="tab" aria-label="Transactions" defaultChecked />
+                    <input type="radio" name="tables" role="tab" className="tab" aria-label="Transactions" defaultChecked />
                     <div role="tabpanel" className="tab-content p-10"><TransactionTable /></div>
 
                     <input
                         type="radio"
-                        name="my_tabs_1"
+                        name="tables"
                         role="tab"
                         className="tab"
                         aria-label="Source"
                     />
                     <div role="tabpanel" className="tab-content p-10"><SourceTable /></div>
 
-                    <input type="radio" name="my_tabs_1" role="tab" className="tab" aria-label="Category" />
+                    <input type="radio" name="tables" role="tab" className="tab" aria-label="Category" />
                     <div role="tabpanel" className="tab-content p-10"><CategoryTable /></div>
                 </div>
             </div>
@@ -99,12 +99,12 @@ function Dashboard() {
             <div className="p-5 rounded-xl border-2 mt-20">
                 <h2 className="font-bold text-xl p-3">Reports</h2>
                 <div role="tablist" className="tabs tabs-bordered">
-                    <input type="radio" name="my_tabs_1" role="tab" className="tab" aria-label="Balance Sheet" defaultChecked />
+                    <input type="radio" name="reports" role="tab" className="tab" aria-label="Balance Sheet" defaultChecked />
                     <div role="tabpanel" className="tab-content p-10"><BalanceSheet /></div>
 
                     <input
                         type="radio"
-                        name="my_tabs_1"
+                        name="reports"
                         role="tab"
                         className="tab"
                         aria-label="Income Statement"
@@ -112,49 +112,12 @@ function Dashboard() {
                     <div role="tabpanel" className="tab-content p-10"></div>
                     {/* <IncomeStatement /> */}
 
-                    <input type="radio" name="my_tabs_1" role="tab" className="tab" aria-label="Donor Receipt" />
+                    <input type="radio" name="reports" role="tab" className="tab" aria-label="Donor Receipt" />
                     <div role="tabpanel" className="tab-content p-10"><DonorReceipt /></div>
                 </div>
             </div>
 
-            <div className="p-5 rounded-xl border-2 mt-20">
-                <h2 className="font-bold text-xl p-2">Financial Data</h2>
-                <div role="tablist" className="tabs tabs-bordered">
-                    <input
-                        type="radio"
-                        name="my_tabs_1"
-                        role="tab"
-                        className="tab"
-                        aria-label="Fund Accounting Table"
-                    />
-                    <div role="tabpanel" className="tab-content p-10">
-                        <TransactionTable />
-                    </div>
-
-                    <input
-                        type="radio"
-                        name="my_tabs_1"
-                        role="tab"
-                        className="tab"
-                        aria-label="Balance Sheet"
-                        defaultChecked
-                    />
-                    <div role="tabpanel" className="tab-content p-10">
-                        <BalanceSheet />
-                    </div>
-
-                    <input
-                        type="radio"
-                        name="my_tabs_1"
-                        role="tab"
-                        className="tab"
-                        aria-label="Donor Receipt"
-                    />
-                    <div role="tabpanel" className="tab-content p-10">
-                        <DonorReceipt />
-                    </div>
-                </div>
-            </div>
+            
             <div className="p-5 rounded-xl border-2 mt-20">
                 <h2 className="font-bold text-xl p-2">Budgets</h2>
                 <BudgetChart name={"rent"} used={123} available={1000} />
