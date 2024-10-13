@@ -117,7 +117,7 @@ function AddTransactionForm() {
             {source?.map((source) => {
               return (
                 <option value={source.id} key={source.id}>
-                  {source.type}
+                  {`${source.type}:${source.name}`}
                 </option>
               );
             })}
