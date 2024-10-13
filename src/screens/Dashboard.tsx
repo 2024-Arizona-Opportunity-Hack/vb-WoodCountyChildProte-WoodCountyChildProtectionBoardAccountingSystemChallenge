@@ -9,6 +9,7 @@ import BalanceSheet from "../components/BalanceSheet";
 import DonorReceipt from "../components/DonorReceipt";
 import AddBudgetForm from "../components/AddBudgetForm";
 import BudgetChart from "../components/BudgetChart";
+import SpendDistributionChart from "../components/SpendDistributionChart";
 import IRSFiling from "../components/IRSFiling";
 import IncomeStatement from "../components/IncomeStatement";
 
@@ -27,7 +28,7 @@ function Dashboard() {
                         className="tab"
                         aria-label="Add Transactions"
                     />
-                    <div role="tabpanel" className="tab-content p-10">
+                    <div role="tabpanel" className="tab-content p-10 max-w-6xl">
                         <AddTransactionForm />
                     </div>
 
@@ -62,16 +63,6 @@ function Dashboard() {
                     />
                     <div role="tabpanel" className="tab-content p-10">
                         <AddBudgetForm />
-                    </div>
-                    <input
-                        type="radio"
-                        name="forms"
-                        role="tab"
-                        className="tab"
-                        aria-label="Add Funding Sources"
-                    />
-                    <div role="tabpanel" className="tab-content p-10">
-                        <AddSourceForm />
                     </div>
                 </div>
             </div>
@@ -144,6 +135,7 @@ function Dashboard() {
                 <h2 className="font-bold text-xl p-2">Budgets</h2>
                 <BudgetChart name={"rent"} used={123} available={1000} />
             </div>
+            
         </div >
     );
 }

@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import supabase from "../../supabase";
+import SpendDistributionChart from "./SpendDistributionChart";
 
 function BalanceSheet() {
   const [assets, setAssets] = useState<number | undefined>();
@@ -39,32 +40,57 @@ function BalanceSheet() {
     setIsLoading(false);
   }
 
-    return (
-       <>
-            <h1 className="text-3xl ml-5 text-center">Statement of Financial Position</h1>
-            <div className="flex justify-center">
-                <div className="stats shadow">
-                    <div className="stat place-items-center">
-                        <div className="stat-title">Assets</div>
-                        <div className="stat-value">${isLoading ? <span className="loading loading-dots loading-sm"></span> : assets}</div>
-                        {/* <div className="stat-desc">From January 1st to February 1st</div> */}
-                    </div>
-
-                    <div className="stat place-items-center">
-                        <div className="stat-title">Liabilities</div>
-                        <div className="stat-value">${isLoading ? <span className="loading loading-dots loading-sm"></span> : liabilities}</div>
-                        {/* <div className="stat-desc text-secondary">↗︎ 40 (2%)</div> */}
-                    </div>
-
-                    <div className="stat place-items-center">
-                        <div className="stat-title">Net Assets (Equity)</div>
-                        <div className="stat-value">${isLoading ? <span className="loading loading-dots loading-sm"></span> : equity}</div>
-                        {/* <div className="stat-desc">↘︎ 90 (14%)</div> */}
-                    </div>
-                </div>
+  return (
+    <div className="flex flex-col items-center space-y-4">
+      <h1 className="text-3xl ml-5 text-center">
+        Statement of Financial Position
+      </h1>
+      <div className="flex justify-center">
+        <div className="stats shadow">
+          <div className="stat place-items-center">
+            <div className="stat-title">Assets</div>
+            <div className="stat-value">
+              $
+              {isLoading ? (
+                <span className="loading loading-dots loading-sm"></span>
+              ) : (
+                assets
+              )}
             </div>
-            </>
-    );
+            {/* <div className="stat-desc">From January 1st to February 1st</div> */}
+          </div>
+
+          <div className="stat place-items-center">
+            <div className="stat-title">Liabilities</div>
+            <div className="stat-value">
+              $
+              {isLoading ? (
+                <span className="loading loading-dots loading-sm"></span>
+              ) : (
+                liabilities
+              )}
+            </div>
+            {/* <div className="stat-desc text-secondary">↗︎ 40 (2%)</div> */}
+          </div>
+
+          <div className="stat place-items-center">
+            <div className="stat-title">Net Assets (Equity)</div>
+            <div className="stat-value">
+              $
+              {isLoading ? (
+                <span className="loading loading-dots loading-sm"></span>
+              ) : (
+                equity
+              )}
+            </div>
+            {/* <div className="stat-desc">↘︎ 90 (14%)</div> */}
+          </div>
+        </div>
+      </div>
+
+      <SpendDistributionChart />
+    </div>
+  );
 }
 
 export default BalanceSheet;
