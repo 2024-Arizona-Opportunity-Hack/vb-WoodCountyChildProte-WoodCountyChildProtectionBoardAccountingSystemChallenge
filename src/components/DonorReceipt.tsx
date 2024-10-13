@@ -9,12 +9,11 @@ function DonorReceipt() {
     }, []);
 
     async function getDonors() {
-        const { data } = await supabase.from('transaction').select(`
-		total_donations:amount.sum(),
-    ...source(name, type)
-	`)
-            .not('amount', 'lte', 0)
-        // .eq('type', 'donation')
+        const { data } = await supabase.from('source').select(`id, name, transaction(
+            amount, date, description, published_date
+        )`)
+        // .not('amount', 'lte', 0)
+        .eq('type', 'donation');
         // .not('type', 'eq', 'grant');
 
         console.log(data)
@@ -24,19 +23,27 @@ function DonorReceipt() {
     return (
         <div className="overflow-x-auto">
             <table className="table table-xs">
-                <thead>
+            <thead>
                     <tr>
+                        <th>id</th>
                         <th>name</th>
-                        <th>total donations</th>
+                        <th>amount</th>
+                        <th>date</th>
+                        <th>description</th>
+                        <th>published_date</th>
                     </tr>
                 </thead>
                 <tbody>
                     {donors?.map((donors) => {
 
                         return (
-                            <tr>
-                                <th>{donors.name}</th>
-                                <td>${donors.total_donations}</td>
+                            <tr key={donors.id}>
+                                <th>{donors.id}</th>
+                                <td>{donors.name}</td>
+                                <td>{donors.amount}</td>                                
+                                <td>{donors.date}</td>
+                                <td>{donors.description}</td>
+                                <td>{donors.published_date}</td>
                             </tr>
                         )
                     })}

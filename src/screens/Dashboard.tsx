@@ -2,7 +2,9 @@ import AddCategoryForm from "../components/AddCategoryForm";
 import AddSourceForm from "../components/AddSourceForm";
 import AddTransactionForm from "../components/AddTransactionForm";
 import Navbar from "../components/Navbar";
-import FundAccounting from "../components/FundAccounting";
+import TransactionTable from "../components/TransactionTable";
+import SourceTable from "../components/SourceTable";
+import CategoryTable from "../components/CategoryTable";
 import BalanceSheet from "../components/BalanceSheet";
 import DonorReceipt from "../components/DonorReceipt";
 import AddBudgetForm from "../components/AddBudgetForm";
@@ -39,6 +41,7 @@ function Dashboard() {
             <AddCategoryForm />
           </div>
 
+<<<<<<< Updated upstream
           <input
             type="radio"
             name="forms"
@@ -59,6 +62,63 @@ function Dashboard() {
           <div role="tabpanel" className="tab-content p-10">
             <AddBudgetForm />
           </div>
+=======
+                    <input
+                        type="radio"
+                        name="forms"
+                        role="tab"
+                        className="tab"
+                        aria-label="Add Funding Sources"
+                    />
+                    <div role="tabpanel" className="tab-content p-10">
+                        <AddSourceForm />
+                    </div>
+                </div>
+            </div>
+
+            {/* center tabs - display data tables */}
+            <div className="p-5 rounded-xl border-2 mt-20">
+                <h2 className="font-bold text-xl p-3">Fund Accounting Table</h2>
+                <div role="tablist" className="tabs tabs-bordered">
+                    <input type="radio" name="my_tabs_1" role="tab" className="tab" aria-label="Transactions" defaultChecked />
+                    <div role="tabpanel" className="tab-content p-10"><TransactionTable /></div>
+
+                    <input
+                        type="radio"
+                        name="my_tabs_1"
+                        role="tab"
+                        className="tab"
+                        aria-label="Source"
+                         />
+                    <div role="tabpanel" className="tab-content p-10"><SourceTable /></div>
+
+                    <input type="radio" name="my_tabs_1" role="tab" className="tab" aria-label="Category" />
+                    <div role="tabpanel" className="tab-content p-10"><CategoryTable /></div>
+                </div>
+            </div>
+
+            {/* bottom tabs - donor management */}
+            <div className="p-5 rounded-xl border-2 mt-20">
+                <h2 className="font-bold text-xl p-3">Reports</h2>
+                <div role="tablist" className="tabs tabs-bordered">
+                    <input type="radio" name="my_tabs_1" role="tab" className="tab" aria-label="Balance Sheet" defaultChecked />
+                    <div role="tabpanel" className="tab-content p-10"><BalanceSheet /></div>
+
+                    <input
+                        type="radio"
+                        name="my_tabs_1"
+                        role="tab"
+                        className="tab"
+                        aria-label="Income Statement"
+                         />
+                    <div role="tabpanel" className="tab-content p-10"></div> 
+                    {/* <IncomeStatement /> */}
+
+                    <input type="radio" name="my_tabs_1" role="tab" className="tab" aria-label="Donor Receipt" />
+                    <div role="tabpanel" className="tab-content p-10"><DonorReceipt /></div>
+                </div>
+            </div>
+>>>>>>> Stashed changes
         </div>
       </div>
 
