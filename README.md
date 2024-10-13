@@ -6,7 +6,7 @@ This website is an interface that can track all of Wood County Child Protection 
 
 The website is a single page dashboard that is locked behind authentication that can be controlled by the organization
 
-![Website]([https://i.imgur.com/zCAFnbG.png](https://i.imgur.com/QvYZpBM.png))
+![Website](https://i.imgur.com/QvYZpBM.png)
 
 # Technologies
 
