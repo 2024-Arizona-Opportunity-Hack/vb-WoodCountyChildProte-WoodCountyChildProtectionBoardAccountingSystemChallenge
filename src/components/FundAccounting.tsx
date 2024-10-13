@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import supabase from "../../supabase";
 import { Transaction } from "../../types"
 
-function Data() {
+function FundAccounting() {
     const [transactions, setTransactions] = useState<Transaction[] | null>([]);
 
     useEffect(() => {
@@ -62,4 +62,4 @@ function Data() {
     );
 }
 
-export default Data
+export default FundAccounting
