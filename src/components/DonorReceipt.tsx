@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 import supabase from "../../supabase";
-import { Donor } from "../../types"
 
 function DonorReceipt() {
-    const [donors, setDonors] = useState<Donor[] | null>([]);
+    const [donors, setDonors] = useState<any[] | null>([]);
 
     useEffect(() => {
         getDonors();
@@ -14,7 +13,7 @@ function DonorReceipt() {
             amount, date, description, published_date
         )`).eq('type', 'donation');
 
-        console.log(data)
+        // console.log(data)
         setDonors(data);
     }
 
@@ -62,7 +61,7 @@ function DonorReceipt() {
                             <tr key={donors.id}>
                                 <th>{donors.id}</th>
                                 <td>{donors.name}</td>
-                                {donors.transaction?.map((donors) => {
+                                {donors.transaction?.map((donors: any) => {
 
                                     return (
                                         <tr key={donors.id}>

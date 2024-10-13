@@ -1,6 +1,3 @@
-import { useState, useEffect } from "react";
-import supabase from "../../supabase";
-
 function IRSFiling() {
     return (
         <div className="overflow-x-auto space-x-3">

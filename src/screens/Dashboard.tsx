@@ -8,10 +8,9 @@ import CategoryTable from "../components/CategoryTable";
 import BalanceSheet from "../components/BalanceSheet";
 import DonorReceipt from "../components/DonorReceipt";
 import AddBudgetForm from "../components/AddBudgetForm";
-import BudgetChart from "../components/BudgetChart";
-import SpendDistributionChart from "../components/SpendDistributionChart";
 import IRSFiling from "../components/IRSFiling";
 import IncomeStatement from "../components/IncomeStatement";
+import BudgetChartList from "../components/BudgetChartList";
 
 function Dashboard() {
     return (
@@ -103,7 +102,7 @@ function Dashboard() {
                         aria-label="Income Statement"
                     />
                     <div role="tabpanel" className="tab-content p-10"><IncomeStatement /></div>
-                    
+
 
                     <input type="radio" name="reports" role="tab" className="tab" aria-label="Donation Details" />
                     <div role="tabpanel" className="tab-content p-10"><DonorReceipt /></div>
@@ -131,11 +130,9 @@ function Dashboard() {
                 <IRSFiling />
             </div>
 
-            <div className="p-5 rounded-xl border-2 mt-20">
-                <h2 className="font-bold text-xl p-2">Budgets</h2>
-                <BudgetChart name={"rent"} used={123} available={1000} />
-            </div>
-            
+
+            <BudgetChartList />
+
         </div >
     );
 }
