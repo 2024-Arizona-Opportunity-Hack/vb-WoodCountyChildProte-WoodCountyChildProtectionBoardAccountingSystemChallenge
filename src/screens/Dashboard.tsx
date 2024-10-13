@@ -50,6 +50,7 @@ function Dashboard() {
             </div>
 
             <div className="p-5 rounded-xl border-2">
+                <h2 className="font-bold text-xl p-2">Financial Data</h2>
                 <div role="tablist" className="tabs tabs-bordered">
                     <input type="radio" name="my_tabs_1" role="tab" className="tab" aria-label="Fund Accounting Table" />
                     <div role="tabpanel" className="tab-content p-10"><FundAccounting /></div>
