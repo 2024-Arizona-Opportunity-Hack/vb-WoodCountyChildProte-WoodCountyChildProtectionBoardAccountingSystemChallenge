@@ -10,6 +10,7 @@ import DonorReceipt from "../components/DonorReceipt";
 import AddBudgetForm from "../components/AddBudgetForm";
 import BudgetChart from "../components/BudgetChart";
 import IRSFiling from "../components/IRSFiling";
+import IncomeStatement from "../components/IncomeStatement";
 
 function Dashboard() {
   return (
@@ -128,15 +129,16 @@ function Dashboard() {
             className="tab"
             aria-label="Income Statement"
           />
-          <div role="tabpanel" className="tab-content p-10"></div>
-          {/* <IncomeStatement /> */}
+          <div role="tabpanel" className="tab-content p-10">
+            <IncomeStatement />
+          </div>
 
           <input
             type="radio"
             name="reports"
             role="tab"
             className="tab"
-            aria-label="Donor Receipt"
+            aria-label="Donation Details"
           />
           <div role="tabpanel" className="tab-content p-10">
             <DonorReceipt />
