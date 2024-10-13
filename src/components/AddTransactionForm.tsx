@@ -2,14 +2,6 @@ import { useEffect, useState } from "react";
 import supabase from "../../supabase";
 import { Category, Source } from "../../types";
 
-type Inputs = {
-  amount: number;
-  source_id: number;
-  category_id: number;
-  date: string;
-  description: string;
-};
-
 const initialValues = {
   amount: "",
   source_id: "",
