@@ -4,6 +4,7 @@ import AddTransactionForm from "../components/AddTransactionForm";
 import Navbar from "../components/Navbar";
 import FundAccounting from "../components/FundAccounting";
 import BalanceSheet from "../components/BalanceSheet";
+import DonorReceipt from "../components/DonorReceipt";
 
 function Dashboard() {
     return (
@@ -49,7 +50,7 @@ function Dashboard() {
                 </div>
             </div>
 
-            <div className="p-5 rounded-xl border-2">
+            <div className="p-5 rounded-xl border-2 mt-20">
                 <h2 className="font-bold text-xl p-2">Financial Data</h2>
                 <div role="tablist" className="tabs tabs-bordered">
                     <input type="radio" name="my_tabs_1" role="tab" className="tab" aria-label="Fund Accounting Table" />
@@ -65,7 +66,7 @@ function Dashboard() {
                     <div role="tabpanel" className="tab-content p-10"><BalanceSheet /></div>
 
                     <input type="radio" name="my_tabs_1" role="tab" className="tab" aria-label="Donor Receipt" />
-                    <div role="tabpanel" className="tab-content p-10">Tab 3 Content</div>
+                    <div role="tabpanel" className="tab-content p-10"><DonorReceipt /></div>
                 </div>
             </div>
         </div>

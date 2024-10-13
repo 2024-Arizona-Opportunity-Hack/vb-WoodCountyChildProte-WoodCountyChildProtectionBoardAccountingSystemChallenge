@@ -33,7 +33,7 @@ function FundAccounting() {
                     {transactions?.map((transaction) => {
 
                         return (
-                            <tr>
+                            <tr key={transaction.id}>
                                 <th>{transaction.id}</th>
                                 <td>{transaction.amount}</td>
                                 <td>{transaction.source_id}</td>
