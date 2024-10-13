@@ -2,6 +2,8 @@ import AddCategoryForm from "../components/AddCategoryForm";
 import AddSourceForm from "../components/AddSourceForm";
 import AddTransactionForm from "../components/AddTransactionForm";
 import Navbar from "../components/Navbar";
+import FundAccounting from "../components/FundAccounting";
+import BalanceSheet from "../components/BalanceSheet";
 
 function Dashboard() {
   return (
@@ -46,6 +48,10 @@ function Dashboard() {
           </div>
         </div>
       </div>
+
+      {/* <FundAccounting /> */}
+      <BalanceSheet />
+      
     </div>
   );
 }
