@@ -9,6 +9,8 @@ import BalanceSheet from "../components/BalanceSheet";
 import DonorReceipt from "../components/DonorReceipt";
 import AddBudgetForm from "../components/AddBudgetForm";
 import BudgetChart from "../components/BudgetChart";
+import IRSFiling from "../components/IRSFiling";
+import IncomeStatement from "../components/IncomeStatement";
 
 function Dashboard() {
     return (
@@ -74,7 +76,7 @@ function Dashboard() {
                 </div>
             </div>
 
-            {/* center tabs - display data tables */}
+            {/* 2nd set of tabs - display data tables */}
             <div className="p-5 rounded-xl border-2 mt-20">
                 <h2 className="font-bold text-xl p-3">Fund Accounting Table</h2>
                 <div role="tablist" className="tabs tabs-bordered">
@@ -86,16 +88,16 @@ function Dashboard() {
                         name="tables"
                         role="tab"
                         className="tab"
-                        aria-label="Source"
+                        aria-label="Sources"
                     />
                     <div role="tabpanel" className="tab-content p-10"><SourceTable /></div>
 
-                    <input type="radio" name="tables" role="tab" className="tab" aria-label="Category" />
+                    <input type="radio" name="tables" role="tab" className="tab" aria-label="Categories" />
                     <div role="tabpanel" className="tab-content p-10"><CategoryTable /></div>
                 </div>
             </div>
 
-            {/* bottom tabs - donor management */}
+            {/* 3rd set of tabs - donor management */}
             <div className="p-5 rounded-xl border-2 mt-20">
                 <h2 className="font-bold text-xl p-3">Reports</h2>
                 <div role="tablist" className="tabs tabs-bordered">
@@ -117,7 +119,27 @@ function Dashboard() {
                 </div>
             </div>
 
-            
+            {/*  4th set of tabs - irs filings */}
+            <div className="p-5 rounded-xl border-2 mt-20">
+                <h2 className="font-bold text-xl p-3">IRS Filings</h2>
+                {/* <div role="tablist" className="tabs tabs-bordered">
+                    <input type="radio" name="reports" role="tab" className="tab" aria-label="Balance Sheet" defaultChecked />
+                    <div role="tabpanel" className="tab-content p-10"><BalanceSheet /></div>
+
+                    <input
+                        type="radio"
+                        name="reports"
+                        role="tab"
+                        className="tab"
+                        aria-label="Income Statement"
+                    />
+                    <div role="tabpanel" className="tab-content p-10"><IncomeStatement /></div>
+                    <input type="radio" name="reports" role="tab" className="tab" aria-label="Donor Receipt" />
+                    <div role="tabpanel" className="tab-content p-10"><DonorReceipt /></div>
+                </div> */}
+                <IRSFiling />
+            </div>
+
             <div className="p-5 rounded-xl border-2 mt-20">
                 <h2 className="font-bold text-xl p-2">Budgets</h2>
                 <BudgetChart name={"rent"} used={123} available={1000} />
