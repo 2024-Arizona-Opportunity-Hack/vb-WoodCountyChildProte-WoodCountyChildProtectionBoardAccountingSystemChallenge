@@ -11,6 +11,8 @@ import AddBudgetForm from "../components/AddBudgetForm";
 import BudgetChart from "../components/BudgetChart";
 import IRSFiling from "../components/IRSFiling";
 import IncomeStatement from "../components/IncomeStatement";
+import AddRestrictionForm from "../components/AddRestrictionForm";
+import RestrictionTable from "../components/RestrictionTable";
 
 function Dashboard() {
   return (
@@ -63,6 +65,16 @@ function Dashboard() {
           <div role="tabpanel" className="tab-content p-10">
             <AddBudgetForm />
           </div>
+          <input
+            type="radio"
+            name="forms"
+            role="tab"
+            className="tab"
+            aria-label="Add restriction"
+          />
+          <div role="tabpanel" className="tab-content p-10">
+            <AddRestrictionForm />
+          </div>
         </div>
       </div>
 
@@ -102,6 +114,17 @@ function Dashboard() {
           />
           <div role="tabpanel" className="tab-content p-10">
             <CategoryTable />
+          </div>
+
+          <input
+            type="radio"
+            name="tables"
+            role="tab"
+            className="tab"
+            aria-label="Restrictions"
+          />
+          <div role="tabpanel" className="tab-content p-10">
+            <RestrictionTable />
           </div>
         </div>
       </div>
